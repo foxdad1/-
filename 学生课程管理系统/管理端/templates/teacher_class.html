@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台管理系统</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"/>
+
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <h1 class="sub-header">开 设 课 程 录 入 </h1>
+        &nbsp;&nbsp;
+        <hr>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>教师名称</th>
+                        <th>开设课程1</th>
+                        <th>开设课程2</th>
+                        <th>开设课程3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <form action="/teacher_class" method="post" onsubmit="return handleSubmit()">
+                            <td><input class="long" name="teacher_id" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><input class="long" name="teacher_class_id1" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><input class="long" name="teacher_class_id2" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><input class="long" name="teacher_class_id3" type="text" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><input class="last" type="submit" value="提交" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td><span>提交结果:{{insert_result}}</span></td>
+                        </form>
+                    </tr>
+                    <tr>
+                        <td>教师名称</td>
+                        <td>开设课程1</td>
+                        <td>开设课程2</td>
+                        <td>开设课程3</td>
+                    </tr>
+                    {% for result in results %}
+                    <tr>
+                        <td>{{result[0]}}</td>
+                        <td>{{result[1]}}</td>
+                        <td>{{result[2]}}</td>
+                        <td>{{result[3]}}</td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>

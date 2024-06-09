@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>导航栏</h2>
+                <ul>
+                 <li>
+                    <a href="#">课程管理</a>
+                        <ul class="submenu">
+                            <li><a href="/teacher_class" target="main">课程录入</a></li>
+                            <li><a href="/teacher" target="main">学生选课信息</a></li>
+                        </ul>
+                </li>
+                <li>
+                    <a href="#">学生管理</a>
+                        <ul class="submenu">
+                            <li><a href="/student" target="main">学生信息录入</a></li>
+                            <li><a href="/update_student" target="main">学生信息修改</a></li>
+                            <li><a href="/grade" target="main">学生成绩录入</a></li>
+                            <li><a href="/grade_infos" target="main">学生成绩查询</a></li>
+                        </ul>
+                </li>
+    <!--<li>
+        <a href="#">关联管理</a>
+        <ul class="submenu">
+            <li><a href="/sselt" target="main">关联查询</a></li>
+            <li><a href="/addstudents" target="main">关联提交</a></li>
+        </ul>
+    </li>
+    -->
+                <li>
+                     <a href="#">用户管理</a>
+                        <ul class="submenu">
+                            <li><a href="/administrator" target="main">管理变动</a></li>
+                        </ul>
+                </li>
+              </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>后台管理系统</h1>
+                    <div class="header-right">
+                        <span>你好，{{user_info}} 管理员!</span>
+                        <span><a href="/" style="color: #0e90d2">退出登陆</a></span>
+                    </div>
+            </div>
+            <iframe name="main" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    <script src="../static/js/index.js"></script>
+</body>
+</html>

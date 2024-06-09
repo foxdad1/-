@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台管理系统</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/administrator.css"/>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="mb-3">
+            <button type="button" class="btn btn-outline-primary" onclick="showForm('add')">增加</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="deleteSelected()">删除</button>
+            <button type="button" class="btn btn-outline-success" onclick="showForm('update')">修改</button>
+            <button type="button" class="btn btn-outline-warning" onclick="showForm('search')">查询</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped" id="table-6">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" onclick="toggleAll(this)"></th>
+                        <th>管理员用户名<span>(限全字母的用户名)</span></th>
+                        <th>管理员密码<span>(限字母和数字组合的密码)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td><input type="checkbox" class="row-check" name="selected_admins" value="{{ result[1] }}"></td>
+                        <td>{{ result[1] }}</td>
+                        <td>{{ result[2] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 增加管理员表单 -->
+        <form id="form-add" class="row g-3" style="display: none;" action="/administrator" method="post" onsubmit="return submitForm('form-add')">
+            <input type="hidden" name="action" value="add">
+            <div class="col-md-4">
+                <label for="admin_name_add" class="form-label">管理员用户名</label>
+                <input class="form-control" id="admin_name_add" name="admin_name" type="text" required placeholder="用户名">
+            </div>
+            <div class="col-md-4">
+                <label for="admin_password_add" class="form-label">管理员密码</label>
+                <input class="form-control" id="admin_password_add" name="admin_password" type="password" required placeholder="密码">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+
+        <!-- 修改管理员表单 -->
+        <form id="form-update" class="row g-3" style="display: none;" action="/administrator" method="post" onsubmit="return submitForm('form-update')">
+            <input type="hidden" name="action" value="update">
+            <div class="col-md-4">
+                <label for="admin_name_update" class="form-label">管理员用户名</label>
+                <input class="form-control" id="admin_name_update" name="admin_name" type="text" required placeholder="用户名">
+            </div>
+            <div class="col-md-4">
+                <label for="admin_password_update" class="form-label">管理员密码</label>
+                <input class="form-control" id="admin_password_update" name="admin_password" type="password" required placeholder="新密码">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+
+        <!-- 查询管理员表单 -->
+        <form id="form-search" class="row g-3" style="display: none;" action="/administrator" method="get" onsubmit="return submitForm('form-search')">
+            <div class="col-md-4">
+                <label for="admin_name_search" class="form-label">管理员用户名</label>
+                <input class="form-control" id="admin_name_search" name="admin_name" type="text" required placeholder="用户名">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary">查询</button>
+            </div>
+        </form>
+
+        <div id="popup" class="alert alert-info" style="display: none;">操作结果: {{ insert_result }}</div>
+    </div>
+
+
+    <script src="../static/js/administrator.js"></script>
+</body>
+
+</html>

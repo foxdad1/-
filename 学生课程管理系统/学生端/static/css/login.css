@@ -1,0 +1,110 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('../images/4.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#maxbox {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    width: 400px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#maxbox h1 {
+    font-size: 30px;
+    color: #4b6cb7;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4b6cb7;
+    margin-bottom: 20px;
+}
+
+#maxbox h2 {
+    font-size: 28px;
+    color: #4b6cb7;
+    margin-bottom: 20px;
+}
+
+.inputbox {
+    margin-top: 30px;
+}
+
+.inputText {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputText span {
+    color: #4b6cb7;
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputText input {
+    width: 100%;
+    padding: 14px;
+    padding-left: 40px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+    font-size: 18px;
+    color: #000; /* 确保文本颜色为黑色 */
+    background-color: white; /* 确保背景色为白色 */
+}
+
+.inputText input[type="text"] {
+    color: black; /* 确保文本颜色为黑色 */
+}
+
+.inputText input:focus {
+    outline: none;
+    border-color: #4b6cb7;
+}
+
+.inputButton {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #4b6cb7;
+    border-radius: 6px;
+    background: white;
+    color: #4b6cb7;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    font-size: 20px;
+}
+
+.inputButton:hover {
+    background: #4b6cb7;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}

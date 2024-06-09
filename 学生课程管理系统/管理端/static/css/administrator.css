@@ -1,0 +1,46 @@
+ .table-striped {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .table-striped th, .table-striped td {
+            border: 1px solid rgb(128, 102, 160);
+            padding: 8px;
+        }
+        .table-striped th {
+            background-color: rgb(128, 102, 160);
+            color: #fff;
+            text-align: left;
+        }
+        .table-striped tr:hover {
+            background-color: #f1f1f1;
+        }
+        .table-striped th, .table-striped td {
+            padding: 5px 10px;
+            font-size: 12px;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+        .table-responsive {
+            margin: 20px 0;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            z-index: 1000;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            width: 50%;
+        }
+
+        .form-inline {
+            display: none;
+            margin-top: 50px;
+        }

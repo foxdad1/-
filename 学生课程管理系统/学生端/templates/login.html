@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>学生课程问答管理系统登陆</title>
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/login.css"/>
+</head>
+
+<body>
+    <div id="maxbox">
+        <h1>学生课程问答管理系统</h1>
+        <h2 >请登录</h2>
+        <div class="inputbox">
+            <form name="frm" action="/" method="post">
+                <div class="inputText">
+                    <span class="iconfont icon-mine"></span>
+                    <input class="username" type="username" placeholder="用户名" name="user" />
+                </div>
+                <div class="inputText">
+                    <span class="iconfont icon-lock"></span>
+                    <input id="password" type="password" placeholder="密码" name="pwd" />
+                    <br>
+                </div>
+                <input class="inputButton" type="submit" value="登 录" />
+                <div class="auth-options">
+                    <a href="#">修改密码</a>
+                </div>
+            </form>
+
+              <div>{{msg}}</div>
+        </div>
+    </div>
+</body>
+
+</html>

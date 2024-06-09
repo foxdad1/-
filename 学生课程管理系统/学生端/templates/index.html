@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程AI对话系统</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="btn btn-secondary me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                ☰
+            </button>
+            <a class="navbar-brand" href="#">ChatGPT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">退出登录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">历史聊天</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <button class="btn btn-primary w-100 mb-3" id="new-chat">新聊天</button>
+            <ul class="list-group" id="chat-history">
+                <!-- Chat history will be dynamically populated here -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card chat-container">
+                    <div class="card-body chat-content" id="chat-content">
+                        <h5 class="card-title text-center">ChatGPT</h5>
+                        <div id="chat-messages" class="mb-3">
+                            <!-- Chat messages will be dynamically populated here -->
+                        </div>
+                    </div>
+                    <div class="card-footer chat-input">
+                        <div class="input-group">
+                            <input type="text" id="user-message" class="form-control" placeholder="给chatgpt发送消息..." aria-label="Message">
+                            <button class="btn btn-primary" type="button" id="send-message">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/index.js"></script>
+    <script>const user_info = "{{ user_info }}"; // 传递用户信息</script>
+</body>
+</html>
